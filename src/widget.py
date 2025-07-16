@@ -10,15 +10,14 @@ def mask_account_card(account_card_data: str) -> str:
             number += char
         elif char.isalpha():
             prefix += char
-
-        if (
-            "счет" in prefix.lower()
-            or "счёт" in prefix.lower()
-            or "account" in prefix.lower()
-        ) or len(number.strip()) != 16:
-            masked_number = get_mask_card_number(number.strip())
-        else:  # Обрабатываем как карту
-            masked_number = get_mask_account(number.strip())
+    if (
+        "счет" in prefix.lower()
+        or "счёт" in prefix.lower()
+        or "account" in prefix.lower()
+    ) or len(number.strip()) != 16:
+        masked_number = get_mask_card_number(number.strip())
+    else:  # Обрабатываем как карту
+        masked_number = get_mask_account(number.strip())
     return f"{prefix.strip()} {masked_number}"
 
 

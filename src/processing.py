@@ -16,14 +16,19 @@ def filter_by_state(operation: list, state: str = 'EXECUTED') -> list:
             result.append(operat)
     return result
 
-# if __name__=="__main__":
-#     print(filter_by_state(operation, 'EXECUTED'))
-#     print(filter_by_state(operation, 'CANCELED'))
+
+if __name__ == "__main__":
+    print(filter_by_state(operation, 'EXECUTED'))
+    print(filter_by_state(operation, 'CANCELED'))
 
 
 def sort_by_date(operation: list) -> list:
     """Сортирует список словарей по дате"""
+    if not all(isinstance(x["date"], str) for x in operation):
+        raise ValueError
+
     return sorted(operation, key=lambda x: x["date"], reverse=True)
 
-# if __name__=="__main__":
-#     print(sort_by_date(operation))
+
+if __name__=="__main__":
+    print(sort_by_date(operation))
