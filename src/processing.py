@@ -30,5 +30,5 @@ def sort_by_date(operation: list) -> list:
     return sorted(operation, key=lambda x: x["date"], reverse=True)
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     print(sort_by_date(operation))
