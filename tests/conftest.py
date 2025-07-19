@@ -1,6 +1,7 @@
 import pytest
 
 from src.widget import get_date, mask_account_card
+from src.processing import filter_by_state, sort_by_date
 
 
 @pytest.fixture
