@@ -33,3 +33,14 @@ def date():
 @pytest.fixture
 def dates():
     return "11.03.2024"
+
+@pytest.fixture
+def mask_card():
+    return "7000792289606361", "7000 79** **** 6361"
+
+
+@pytest.fixture
+def mask_account():
+    return "73654108430135874305", "** 4305"
+
+
