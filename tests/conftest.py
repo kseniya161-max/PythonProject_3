@@ -1,7 +1,6 @@
 import pytest
 
-
-from src.widget import mask_account_card, get_date
+from src.widget import get_date, mask_account_card
 
 
 @pytest.fixture
@@ -34,6 +33,7 @@ def date():
 def dates():
     return "11.03.2024"
 
+
 @pytest.fixture
 def mask_card():
     return "7000792289606361", "7000 79** **** 6361"
@@ -42,5 +42,3 @@ def mask_card():
 @pytest.fixture
 def mask_account():
     return "73654108430135874305", "** 4305"
-
-
