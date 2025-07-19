@@ -44,4 +44,3 @@ def mask_card():
 @pytest.fixture
 def mask_account():
     return "73654108430135874305", "** 4305"
-
