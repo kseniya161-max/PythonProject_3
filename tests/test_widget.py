@@ -4,7 +4,7 @@ import pytest
 from src.widget import get_date, mask_account_card
 
 
-def test_mask_account_card(card, account):
+def test_mask_account_card():
 
     """Тестирование mask_account_card """
     assert mask_account_card("Maestro 1596837868705199") == "Maestro 1596 83** **** 5199"
