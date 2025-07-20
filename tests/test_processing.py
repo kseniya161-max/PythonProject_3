@@ -1,7 +1,7 @@
 import pytest
 
+
 from src.processing import filter_by_state, sort_by_date
-from src.widget import mask_account_card, get_date
 
 
 def test_filter_by_state(operation):
@@ -45,23 +45,3 @@ def test_sort_by_date_same_date():
         {'id': 1, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
         {'id': 2, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}
     ]
-
-
-def test_mask_account_card(card, account):
-
-    """Тестирование mask_account_card """
-    assert mask_account_card(card[0]) == card[1]
-    assert mask_account_card(account[0]) == account[1]
-
-
-@pytest.mark.parametrize("number, expected", [
-    ("Счет 70007922896063612056", "Счет 7000 79** **** 2056"),
-    ("Maestro 1596837868705199", "Maestro ** 5199")
-])
-def tests_multiple_mask_account_card(number, expected):
-    assert mask_account_card(number) == expected
-
-
-def test_get_date():
-    """ Тестирование функции get_date"""
-    assert get_date("2024-03-11T02:26:18.671407") == "11.03.2024"

@@ -1,9 +1,6 @@
 import pytest
 
 
-from src.widget import mask_account_card, get_date
-
-
 @pytest.fixture
 def operation():
     return [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
@@ -33,3 +30,13 @@ def date():
 @pytest.fixture
 def dates():
     return "11.03.2024"
+
+
+@pytest.fixture
+def mask_card():
+    return "7000792289606361", "7000 79** **** 6361"
+
+
+@pytest.fixture
+def mask_account():
+    return "73654108430135874305", "** 4305"
