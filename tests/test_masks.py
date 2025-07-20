@@ -40,4 +40,3 @@ def test_get_mask_acc():
 
 def test_get_mask_card_number_none_list():
     assert get_mask_card_number(None) == ""
-
