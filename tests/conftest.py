@@ -7,11 +7,9 @@ def operation():
             {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
             {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
             {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}]
-
-
 @pytest.fixture
 def card():
-    return "Maestro 1596837868705199", "Maestro ** 5199"
+    return "Maestro 1596837868705199", "Maestro **5199"
 
 
 @pytest.fixture
@@ -39,4 +37,4 @@ def mask_card():
 
 @pytest.fixture
 def mask_account():
-    return "73654108430135874305", "** 4305"
+    return "73654108430135874305", "**4305"

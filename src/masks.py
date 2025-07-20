@@ -9,7 +9,7 @@ def get_mask_card_number(card_num: str) -> str:
 
 def get_mask_account(num_count: str) -> str:
     """Функция возвращает маску счета"""
-    mask_count = f"** {num_count[-4:]}"
+    mask_count = f"**{num_count[-4:]}"
     return mask_count
 
 
