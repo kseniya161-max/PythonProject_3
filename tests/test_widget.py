@@ -4,16 +4,16 @@ import pytest
 from src.widget import get_date, mask_account_card
 
 
-def test_mask_account_card(card, account):
+def test_mask_account_card():
 
     """Тестирование mask_account_card """
-    assert mask_account_card(card[0]) == card[1]
-    assert mask_account_card(account[0]) == account[1]
+    assert mask_account_card("Maestro 1596837868705199") == "Maestro 1596 83** **** 5199"
+    assert mask_account_card("Счет 70007922896063612056") == "Счет **2056"
 
 
 @pytest.mark.parametrize("number, expected", [
-    ("Счет 70007922896063612056", "Счет 7000 79** **** 2056"),
-    ("Maestro 1596837868705199", "Maestro ** 5199")
+    ("Счет 70007922896063612056", "Счет **2056"),
+    ("Maestro 1596837868705199", "Maestro 1596 83** **** 5199")
 ])
 def tests_multiple_mask_account_card(number, expected):
     assert mask_account_card(number) == expected

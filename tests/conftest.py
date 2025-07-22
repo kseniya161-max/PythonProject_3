@@ -10,16 +10,6 @@ def operation():
 
 
 @pytest.fixture
-def card():
-    return "Maestro 1596837868705199", "Maestro ** 5199"
-
-
-@pytest.fixture
-def account():
-    return "Счет 70007922896063612056", "Счет 7000 79** **** 2056"
-
-
-@pytest.fixture
 def date():
     return [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
     {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'},
@@ -28,15 +18,5 @@ def date():
 
 
 @pytest.fixture
-def dates():
-    return "11.03.2024"
-
-
-@pytest.fixture
 def mask_card():
-    return "7000792289606361", "7000 79** **** 6361"
-
-
-@pytest.fixture
-def mask_account():
-    return "73654108430135874305", "** 4305"
+    return "7000 79** **** 6361"
