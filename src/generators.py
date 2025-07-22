@@ -89,13 +89,31 @@ def transaction_descriptions(transactions):
         if transaction.get("description"):
             yield transaction.get("description")
 
+# if __name__ == "__main__":
+#     result = transaction_descriptions(transactions)
+#     print(next(result))
+#     print(next(result))
+#     print(next(result))
+#     print(next(result))
+#     print(next(result))
+
+
+def card_number_generator(start: int(1), stop: int(9999_9999_9999_9999)):
+    """ Генератор генерирует номера карт в диаппазоне от 0000 0000 0000 0001 до 9999 9999 9999 9999"""
+    for card_num in range(start, stop +1):
+        yield f"{card_num:016d}"[:4] + " " + f"{card_num:016d}"[4:8] + " " + f"{card_num:016d}"[8:12] + " " + f"{card_num:016d}"[12:16]
+
+
 if __name__ == "__main__":
-    result = transaction_descriptions(transactions)
-    print(next(result))
-    print(next(result))
-    print(next(result))
-    print(next(result))
-    print(next(result))
+    start = 1
+    stop = 9999_9999_9999_9999
+    generator = card_number_generator(start, stop)
+
+
+    for _ in range(5):
+        print(next(generator))
+
+
 
 
 
