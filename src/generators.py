@@ -83,6 +83,13 @@ def filter_by_currency(transactions, currency_code):
     filtered_transactions = [transaction for transaction in transactions if transaction['operationAmount']['currency']['code'] == currency_code]
     return filtered_transactions
 
+if __name__ == "__main__":
+    usd_transactions = filter_by_currency(transactions, 'USD')
+
+    for transaction in usd_transactions:
+        print(transaction)
+
+
 
 def transaction_descriptions(transactions):
     for transaction in transactions:
@@ -105,14 +112,14 @@ def card_number_generator(start: int(1), stop: int(9999_9999_9999_9999)):
         yield f"{card_num:016d}"[:4] + " " + f"{card_num:016d}"[4:8] + " " + f"{card_num:016d}"[8:12] + " " + f"{card_num:016d}"[12:16]
 
 
-if __name__ == "__main__":
-    start = 1
-    stop = 9999_9999_9999_9999
-    generator = card_number_generator(start, stop)
-
-
-    for _ in range(5):
-        print(next(generator))
+# if __name__ == "__main__":
+#     start = 1
+#     stop = 9999_9999_9999_9999
+#     generator = card_number_generator(start, stop)
+#
+#
+#     for _ in range(5):
+#         print(next(generator))
 
 
 
