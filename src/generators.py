@@ -83,8 +83,20 @@ def filter_by_currency(transactions, currency_code):
     filtered_transactions = [transaction for transaction in transactions if transaction['operationAmount']['currency']['code'] == currency_code]
     return filtered_transactions
 
+
+def transaction_descriptions(transactions):
+    for transaction in transactions:
+        if transaction.get("description"):
+            yield transaction.get("description")
+
 if __name__ == "__main__":
-    # Пример использования функции
-    usd_transactions = filter_by_currency(transactions, "USD")
-    for transaction in usd_transactions:
-        print(transaction)
+    result = transaction_descriptions(transactions)
+    print(next(result))
+    print(next(result))
+    print(next(result))
+    print(next(result))
+    print(next(result))
+
+
+
+
