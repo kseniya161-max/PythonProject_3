@@ -1,6 +1,7 @@
 import pytest
 
-from src.generators import filter_by_currency, transaction_descriptions
+from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
+
 
 
 def test_filter_not_existing_currency(transactions):
@@ -37,4 +38,13 @@ def test_transaction_descriptions(transactions):
 def test_transaction_descriptions_empty():
     """ Тест проверяет устойчивость функции к пустым входным данным."""
     assert list(transaction_descriptions([])) == []
+
+
+def test_card_number_generator():
+    """ Тестирует что генератор выдает правильные номера карт в заданном диапазоне."""
+    start = 1
+    stop = 6
+    expected_list = ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003", "0000 0000 0000 0004", "0000 0000 0000 0005"]
+    assert list(card_number_generator(start, stop)) == expected_list
+
 
