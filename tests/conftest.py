@@ -118,3 +118,22 @@ def transaction_descriptions():
 @pytest.fixture
 def card_number_generator():
     return ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003", "0000 0000 0000 0004", "0000 0000 0000 0005"]
+
+@pytest.fixture
+def card_generator():
+    start = 1
+    stop = 6
+    return card_number_generator(start, stop)
+
+
+def test_card_number_format(card_generator):
+    expected_formats = [
+        "0000 0000 0000 0001",
+        "0000 0000 0000 0002",
+        "0000 0000 0000 0003",
+        "0000 0000 0000 0004",
+        "0000 0000 0000 0005"
+    ]
+
+    for actual, expected in zip(card_generator, expected_formats):
+        assert actual == expected

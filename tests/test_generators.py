@@ -48,3 +48,27 @@ def test_card_number_generator():
     assert list(card_number_generator(start, stop)) == expected_list
 
 
+def test_card_number_generator_incorrect():
+    """ Тестирует что генератор не возвращает значения при неправильном диапазоне"""
+    start = 1
+    with pytest.raises(TypeError):
+        list(card_number_generator(start, None))
+    assert list(card_number_generator(3, 2)) == []
+
+
+def test_card_number_generator_correct_formating():
+    """ Проверяет корректность форматирования номеров карт"""
+    start = 1
+    stop = 6
+    expected_list = ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003", "0000 0000 0000 0004",
+                     "0000 0000 0000 0005"]
+
+    format_card = list(card_number_generator(start, stop))
+
+    for actual, expected in zip(format_card, expected_list):
+        assert actual == expected
+
+
+
+
+
