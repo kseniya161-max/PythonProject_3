@@ -1,6 +1,6 @@
 import pytest
 
-from src.generators import filter_by_currency
+from src.generators import filter_by_currency, transaction_descriptions
 
 
 def test_filter_not_existing_currency(transactions):
@@ -10,13 +10,31 @@ def test_filter_not_existing_currency(transactions):
     {'id': 895315941, 'state': 'EXECUTED', 'date': '2018-08-19T04:27:37.904916', 'operationAmount': {'amount': '56883.54', 'currency': {'name': 'USD', 'code': 'USD'}}, 'description': 'Перевод с карты на карту', 'from': 'Visa Classic 6831982476737658', 'to': 'Visa Platinum 8990922113665229'}]
 
 
-# def test_filter_by_currency_invalid():
-#     """Тестирует по заданной валюте"""
-#     invalid_currency = {"amount": "9824.07", "currency": {"name": "USD","code": "EUR"}}
-#     with pytest.raises(ValueError):
-#         filter_by_currency(invalid_currency)
-
 
 def test_filter_by_currency(transactions):
     """ Тестирует когда транзакции в заданной валюте отсутствуют"""
     assert filter_by_currency(transactions, "EUR") == []
+
+
+def test_transaction_descriptions(transactions):
+    """ Тестирует что все ожидаемые описания присутствуют в результатах"""
+    descriptions = list(transaction_descriptions(transactions))
+
+
+    expected_descriptions = [
+        "Перевод организации",
+        "Перевод со счета на счет",
+        "Перевод со счета на счет",
+        "Перевод с карты на карту"
+    ]
+
+
+    for description in expected_descriptions:
+        assert description in descriptions
+
+
+
+def test_transaction_descriptions_empty():
+    """ Тест проверяет устойчивость функции к пустым входным данным."""
+    assert list(transaction_descriptions([])) == []
+
