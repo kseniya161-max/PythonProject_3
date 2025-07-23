@@ -78,10 +78,13 @@ transactions = (
     ]
 )
 
+
 def filter_by_currency(transactions, currency_code):
     """Функция использует генератор для фильтрации транзакций по валюте"""
-    filtered_transactions = [transaction for transaction in transactions if transaction['operationAmount']['currency']['code'] == currency_code]
+    filtered_transactions = [
+        transaction for transaction in transactions if transaction['operationAmount']['currency']['code'] == currency_code]
     return filtered_transactions
+
 
 if __name__ == "__main__":
     usd_transactions = filter_by_currency(transactions, 'USD')
@@ -96,6 +99,7 @@ def transaction_descriptions(transactions):
     for transaction in transactions:
         if transaction.get("description"):
             yield transaction.get("description")
+
 
 if __name__ == "__main__":
     result = transaction_descriptions(transactions)
@@ -117,12 +121,5 @@ if __name__ == "__main__":
     stop = 9999_9999_9999_9999
     generator = card_number_generator(start, stop)
 
-
     for _ in range(5):
         print(next(generator))
-
-
-
-
-
-
