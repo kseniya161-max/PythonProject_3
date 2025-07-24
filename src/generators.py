@@ -81,32 +81,10 @@ transactions = (
 
 def filter_by_currency(transactions, currency_code):
     """Функция использует генератор для фильтрации транзакций по валюте"""
-    filtered_transactions = [
-        transaction for transaction in transactions if transaction['operationAmount']['currency']['code'] == currency_code]
+    filtered_transactions = (
+    transaction for transaction in transactions if
+    transaction['operationAmount']['currency']['code'] == currency_code)
     return filtered_transactions
-
-
-if __name__ == "__main__":
-    usd_transactions = filter_by_currency(transactions, 'USD')
-
-    for transaction in usd_transactions:
-        print(transaction)
-
-
-# def filter_by_currency(transactions, currency_code):
-#     """Функция использует генератор для фильтрации транзакций по валюте"""
-#     filtered_transactions = (
-#     transaction for transaction in transactions if
-#     transaction['operationAmount']['currency']['code'] == currency_code)
-#     yield filtered_transactions
-#
-#
-# if __name__ == "__main__":
-#     usd_transactions = filter_by_currency(transactions, 'USD')
-#
-# for transaction in usd_transactions:
-#     print(next(transaction))
-
 
 
 def transaction_descriptions(transactions):
@@ -115,15 +93,6 @@ def transaction_descriptions(transactions):
     for transaction in transactions:
         if transaction.get("description"):
             yield transaction.get("description")
-
-
-if __name__ == "__main__":
-    result = transaction_descriptions(transactions)
-    print(next(result))
-    print(next(result))
-    print(next(result))
-    print(next(result))
-    print(next(result))
 
 
 def card_number_generator(start: int, stop: int):
@@ -139,3 +108,19 @@ if __name__ == "__main__":
 
     for _ in range(5):
         print(next(generator))
+
+
+if __name__ == "__main__":
+    usd_transactions = filter_by_currency(transactions, 'USD')
+
+    for transaction in usd_transactions:
+        print(transaction)
+
+
+if __name__ == "__main__":
+    result = transaction_descriptions(transactions)
+    print(next(result))
+    print(next(result))
+    print(next(result))
+    print(next(result))
+    print(next(result))
