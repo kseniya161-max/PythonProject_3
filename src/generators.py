@@ -93,6 +93,22 @@ if __name__ == "__main__":
         print(transaction)
 
 
+# def filter_by_currency(transactions, currency_code):
+#     """Функция использует генератор для фильтрации транзакций по валюте"""
+#     filtered_transactions = (
+#     transaction for transaction in transactions if
+#     transaction['operationAmount']['currency']['code'] == currency_code)
+#     yield filtered_transactions
+#
+#
+# if __name__ == "__main__":
+#     usd_transactions = filter_by_currency(transactions, 'USD')
+#
+# for transaction in usd_transactions:
+#     print(next(transaction))
+
+
+
 def transaction_descriptions(transactions):
     """ Функция реализует генератор который принимает список словарей
      с транзакциями и возвращает описание каждой операции по очереди."""

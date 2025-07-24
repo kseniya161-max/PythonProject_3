@@ -136,6 +136,7 @@ def card_generator():
     return card_number_generator(start, stop)
 
 
+@pytest.fixture
 def test_card_number_format(card_generator):
     expected_formats = [
         "0000 0000 0000 0001",

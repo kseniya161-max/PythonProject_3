@@ -67,3 +67,45 @@ def test_card_number_generator_correct_formating():
 
     for actual, expected in zip(format_card, expected_list):
         assert actual == expected
+
+
+@pytest.mark.parametrize("transactions, expected_descriptions", [
+    (
+        [
+            {"description": "Перевод организации"},
+            {"description": "Перевод со счета на счет"},
+            {"description": "Перевод со счета на счет"},
+            {"description": "Перевод с карты на карту"}
+        ],
+        [
+            "Перевод организации",
+            "Перевод со счета на счет",
+            "Перевод со счета на счет",
+            "Перевод с карты на карту"
+        ]
+    ),
+    (
+        [
+            {"description": "Оплата товара"},
+            {"description": "Перевод организации"},
+            {"description": "Перевод со счета на счет"},
+            {"description": None}
+        ],
+        [
+            "Перевод организации",
+            "Перевод со счета на счет",
+            "Оплата товара"
+        ]
+    ),
+    (
+        [
+            {"description": None},
+            {"description": None}
+        ],
+        []
+    ),
+])
+def test_transaction_descriptions(transactions, expected_descriptions):
+    """ Тестирует, что все ожидаемые описания присутствуют в результатах """
+    descriptions = list(transaction_descriptions(transactions))
+
