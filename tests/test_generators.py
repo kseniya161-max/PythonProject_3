@@ -111,10 +111,8 @@ def test_card_number_generator_correct_formating():
         []
     ),
 ])
-def test_transaction_descriptions(transactions, expected_descriptions):
+def test_transaction_descriptions_expected(transactions, expected_descriptions):
     """ Тестирует, что все ожидаемые описания присутствуют в результатах """
     descriptions = list(transaction_descriptions(transactions))
     for description in expected_descriptions:
         assert description in descriptions
-
-
