@@ -3,28 +3,21 @@ from src.masks import get_mask_account, get_mask_card_number
 
 def mask_account_card(account_card_data: str) -> str:
     """Функция возвращает маску номера карты или счета"""
-    prefix = ""
-    number = ""
-    for char in account_card_data:
-        if char.isdigit():
-            number += char
-        elif char.isalpha():
-            prefix += char
+    name, number = account_card_data.rsplit(' ', maxsplit=1)
+    if name.lower() in {'счет', 'счёт'}:
+        masked_number = get_mask_account(number)
+    else:
+        masked_number = get_mask_card_number(number)
 
-        if (
-            "счет" in prefix.lower()
-            or "счёт" in prefix.lower()
-            or "account" in prefix.lower()
-        ) or len(number.strip()) != 16:
-            masked_number = get_mask_card_number(number.strip())
-        else:  # Обрабатываем как карту
-            masked_number = get_mask_account(number.strip())
-    return f"{prefix.strip()} {masked_number}"
+    return f'{name} {masked_number}'
 
 
 def get_date(date: str) -> str:
     """Функция возвращает строку с датой"""
-    new_date = f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
+    day = date[8:10]
+    month = date[5:7]
+    year = date[0:4]
+    new_date = f"{day}.{month}.{year}"
     return new_date
 
 
