@@ -10,7 +10,7 @@ def test_decorators_get_mask_card_number(caplog):
             assert result == "7000 79** **** 6361"
             assert "Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361" in caplog.text
             assert "Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}" in caplog.text
-            assert "INFO     get_mask_card_number:decorators.py:50 Ending function: get_mask_card_number" in caplog.text
+            assert "INFO     get_mask_card_number:decorators.py:49 Ending function: get_mask_card_number" in caplog.text
         result_none = get_mask_card_number(None)
         assert result_none == ""
         assert "Starting function: get_mask_card_number, args: (None,), kwargs: {}" in caplog.text

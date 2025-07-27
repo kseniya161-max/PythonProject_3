@@ -3,7 +3,6 @@ import datetime
 from functools import wraps
 help(logging)
 
-
 import logging
 import functools
 
@@ -21,14 +20,14 @@ def log(filename=None):
     setup_logging(filename)
 
     def decorator(func):
-        # Создаем логгер для текущей функции
+
         logger = logging.getLogger(func.__name__)
 
         # Настройка индивидуального обработчика для этой функции
         handler = logging.StreamHandler() if filename is None else logging.FileHandler(filename)
         handler.setLevel(logging.INFO)
 
-        # Форматирование логов
+
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
 
