@@ -4,6 +4,7 @@ from src. decorators import  get_mask_card_number, get_mask_account, faulty_func
 
 
 def test_decorators_get_mask_card_number(caplog):
+    """Тестирует вывод верный ли вывод логов к декоратору get_mask_card_number"""
     with caplog.at_level(logging.INFO):
         result = get_mask_card_number("7000792289606361")
         if result:
@@ -18,6 +19,7 @@ def test_decorators_get_mask_card_number(caplog):
 
 
 def test_decorators_get_mask_card_account(caplog):
+    """Тестирует вывод верный ли вывод логов к декоратору get_mask_card_account"""
     with caplog.at_level(logging.INFO):
         result = get_mask_account("73654108430135874305")
         if result:
@@ -28,6 +30,7 @@ def test_decorators_get_mask_card_account(caplog):
 
 
 def test_decorator_time_account(caplog):
+    """Тестирует вывод верный ли вывод даты и времени"""
     with caplog.at_level(logging.INFO):
         result = get_mask_account("73654108430135874305")
         if result:
@@ -35,6 +38,7 @@ def test_decorator_time_account(caplog):
 
 
 def test_decorator_logs_exceptions(caplog):
+    """Тестирует вывод верный ли вывод логов к выбрасывнию ошибки"""
     with caplog.at_level(logging.ERROR):
         with pytest.raises(ValueError):
             faulty_function()

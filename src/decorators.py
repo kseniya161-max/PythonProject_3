@@ -23,7 +23,7 @@ def log(filename=None):
 
         logger = logging.getLogger(func.__name__)
 
-        # Настройка индивидуального обработчика для этой функции
+        """Настройка индивидуального обработчика для этой функции"""
         handler = logging.StreamHandler() if filename is None else logging.FileHandler(filename)
         handler.setLevel(logging.INFO)
 
