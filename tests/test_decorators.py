@@ -40,7 +40,6 @@ def test_decorator_logs_exceptions(caplog):
         with pytest.raises(ValueError):
             faulty_function()
 
-        # Проверяем, что сообщение об ошибке записано в логах
         assert "Error in function: faulty_function" in caplog.text
         assert "error type: ValueError" in caplog.text
         assert "args: ()" in caplog.text

@@ -72,7 +72,7 @@ def get_mask_account(num_count: str) -> str:
     return mask_count
 
 
-@log("my_filename_log.txt")
+@log()
 def faulty_function():
     raise ValueError("This is a test exception")
 
