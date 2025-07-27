@@ -1,6 +1,6 @@
 import pytest
 import logging
-from src. decorators import  get_mask_card_number, get_mask_account, faulty_function
+from src. decorators import  get_mask_card_number, get_mask_account, faulty_function, setup_logging
 
 
 def test_decorators_get_mask_card_number(caplog):
@@ -15,7 +15,6 @@ def test_decorators_get_mask_card_number(caplog):
         assert result_none == ""
         assert "Starting function: get_mask_card_number, args: (None,), kwargs: {}" in caplog.text
         assert "Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361" in caplog.text
-
 
 
 def test_decorators_get_mask_card_account(caplog):
@@ -44,19 +43,3 @@ def test_decorator_logs_exceptions(caplog):
         assert "error type: ValueError" in caplog.text
         assert "args: ()" in caplog.text
         assert "kwargs: {}" in caplog.text
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

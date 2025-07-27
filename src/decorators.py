@@ -75,6 +75,7 @@ def get_mask_account(num_count: str) -> str:
 def faulty_function():
     raise ValueError("This is a test exception")
 
+
 if __name__ == "__main__":
     print(get_mask_card_number("7000792289606361"))
     print(get_mask_card_number(None))
