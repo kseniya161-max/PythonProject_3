@@ -1,0 +1,134 @@
+2025-07-27 17:39:37,782 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 17:39:37,782 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 17:39:37,782 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 17:44:39,773 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 17:44:39,773 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 17:44:39,821 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:18:30,034 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:18:30,082 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:18:30,082 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:20:00,099 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:20:00,099 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:20:00,100 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:23:30,700 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:23:30,700 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:23:30,701 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:28:36,547 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:28:36,547 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:28:36,547 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:32:50,964 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:32:50,964 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:32:50,965 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:33:00,237 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:33:00,237 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:33:00,238 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:33:54,260 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:33:54,260 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:33:54,260 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:34:10,340 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:34:10,342 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:34:10,343 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:47:40,362 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:47:40,363 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:47:40,363 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:47:40,363 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 18:47:40,363 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 18:47:40,363 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:48:41,694 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:48:41,694 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:48:41,694 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:48:41,694 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 18:48:41,695 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 18:48:41,695 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:50:07,208 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:50:07,208 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:50:07,208 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:50:07,209 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 18:50:07,209 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 18:50:07,209 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:57:31,396 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 18:57:31,397 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 18:57:31,397 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:57:31,397 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 18:57:31,397 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 18:57:31,397 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 18:57:31,400 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 18:57:31,400 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 18:57:31,400 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:03:01,896 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:03:01,896 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:03:01,896 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:03:01,896 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:03:01,896 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:03:01,897 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:03:01,899 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:03:01,900 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:03:01,900 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:05:02,172 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:05:02,172 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:05:02,173 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:05:02,173 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:05:02,173 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:05:02,173 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:05:02,176 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:05:02,177 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:05:02,177 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:09:12,288 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:09:12,290 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:09:12,290 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:09:12,290 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:09:12,290 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:09:12,290 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:09:12,293 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:09:12,294 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:09:12,294 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:09:59,424 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:09:59,425 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:09:59,425 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:09:59,425 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:09:59,425 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:09:59,425 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:09:59,429 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:09:59,429 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:09:59,429 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:10:16,560 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:10:16,560 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:10:16,561 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:10:16,561 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:10:16,561 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:10:16,561 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:10:16,564 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:10:16,564 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:10:16,565 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:10:29,747 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:10:29,748 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:10:29,748 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:10:29,748 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:10:29,748 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:10:29,748 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:10:29,750 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:10:29,751 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:10:29,751 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:10:41,377 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:10:41,377 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:10:41,377 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:10:41,377 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:10:41,378 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:10:41,378 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:10:41,381 - get_mask_account - INFO - Starting function: get_mask_account, args: ('73654108430135874305',), kwargs: {}
+2025-07-27 19:10:41,381 - get_mask_account - INFO - Function: get_mask_account completed successfully with result: **4305
+2025-07-27 19:10:41,381 - get_mask_account - INFO - Ending function: get_mask_account
+2025-07-27 19:14:39,365 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:14:39,365 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:14:39,365 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:14:39,366 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:14:39,366 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:14:39,366 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:14:57,557 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: ('7000792289606361',), kwargs: {}
+2025-07-27 19:14:57,559 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2025-07-27 19:14:57,559 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:14:57,559 - get_mask_card_number - INFO - Starting function: get_mask_card_number, args: (None,), kwargs: {}
+2025-07-27 19:14:57,560 - get_mask_card_number - INFO - Function: get_mask_card_number completed successfully with result: 
+2025-07-27 19:14:57,560 - get_mask_card_number - INFO - Ending function: get_mask_card_number
+2025-07-27 19:37:13,357 - faulty_function - ERROR - Error in function: faulty_function, error type: ValueError, args: (), kwargs: {}
+2025-07-27 19:37:27,253 - faulty_function - ERROR - Error in function: faulty_function, error type: ValueError, args: (), kwargs: {}
