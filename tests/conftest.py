@@ -148,3 +148,7 @@ def test_card_number_format(card_generator):
 
     for actual, expected in zip(card_generator, expected_formats):
         assert actual == expected
+
+@pytest.fixture
+def test_decorators(result):
+    return "Function: get_mask_card_number completed successfully with result: 7000 79** **** 6361"

@@ -32,7 +32,7 @@ def log(filename=None):
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
 
-        # Добавляем обработчик к логгеру
+
         logger.addHandler(handler)
 
         @functools.wraps(func)
@@ -45,7 +45,7 @@ def log(filename=None):
             except Exception as e:
                 logger.error(
                     f'Error in function: {func.__name__}, error type: {type(e).__name__}, args: {args}, kwargs: {kwargs}')
-                raise  # Пробрасываем ошибку дальше
+                raise
             finally:
                 logger.info(f'Ending function: {func.__name__}')
 
@@ -54,8 +54,8 @@ def log(filename=None):
     return decorator
 
 
-
-@log("my_filename_log.txt")
+# "my_filename_log.txt"
+@log()
 def get_mask_card_number(card_num: str) -> str:
     """Функция возвращает маску номера карты"""
     if card_num is None:
@@ -65,12 +65,16 @@ def get_mask_card_number(card_num: str) -> str:
         return mask_card
 
 
-@log("my_filename_log.txt")
+@log()
 def get_mask_account(num_count: str) -> str:
     """Функция возвращает маску счета"""
     mask_count = f"**{num_count[-4:]}"
     return mask_count
 
+
+@log("my_filename_log.txt")
+def faulty_function():
+    raise ValueError("This is a test exception")
 
 if __name__ == "__main__":
     print(get_mask_card_number("7000792289606361"))
