@@ -1,6 +1,7 @@
 import json
 import os
-from src. external_api import convert_currency
+from src.external_api import convert_currency
+
 
 
 def read_file(file_path):

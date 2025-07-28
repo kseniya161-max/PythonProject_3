@@ -13,7 +13,7 @@ def get_currency(currency_code):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json()
-        return ['rates'],['RUB']
+        return data['rates'],['RUB']
     else:
         raise Exception("Ошибка при получении курса валюты.")
 
