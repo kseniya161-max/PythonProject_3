@@ -13,6 +13,7 @@ def test_convert_currency():
         print("After conversion")
         assert result == 3750.0
 
+
 def test_convert_currency_rub():
     """Тестирует, что RUB не конвертируется"""
     result = convert_currency(100, 'RUB')
