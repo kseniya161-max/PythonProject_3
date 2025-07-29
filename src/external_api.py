@@ -1,6 +1,19 @@
 from src.utils import read_file
 import json
 import requests
+import os
+from dotenv import load_dotenv
+
+# переменные из окружения  .env
+load_dotenv()
+
+# Доступ к переменным окружения
+api_key = os.getenv('API_KEY')
+database_url = os.getenv('DATABASE_URL')
+
+
+print(f"Токен доступа: {api_key}")
+
 
 
 def get_currency(currency_code):
