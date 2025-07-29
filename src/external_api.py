@@ -9,14 +9,13 @@ load_dotenv()
 
 # Доступ к переменным окружения
 api_key = os.getenv('API_KEY')
-database_url = os.getenv('DATABASE_URL')
-
 
 print(f"Токен доступа: {api_key}")
 
 
 def get_currency(currency_code):
     """Получает курс валют и конвертирует его в рубли"""
+
     url = f"https://api.apilayer.com/exchangerates_data/latest?symbols=RUB&base={currency_code}"
     headers = {
         "apikey": "1XqmGMhWlHPfZgIWn9q6DU3bTlflFCt5"  # Мой Api ключ
@@ -49,7 +48,7 @@ def convert_currency(amount, currency_code):
     """ Конвертируем в рубли"""
     if currency_code in ['USD', 'EUR']:
         rate = get_currency(currency_code)
-        return amount * rate # Сама конвертация
+        return amount * rate
     return amount
 
 
