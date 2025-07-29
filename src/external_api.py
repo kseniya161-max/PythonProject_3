@@ -1,24 +1,25 @@
 from src.utils import read_file
-import json
 import requests
 import os
 from dotenv import load_dotenv
+from typing import Any
 
-# переменные из окружения .env
+
 load_dotenv()
-
-# Доступ к переменным окружения
 api_key = os.getenv('API_KEY')
+""" Если Api нет в окружении то это вызовет ошибку"""
+if api_key is None:
+    raise ValueError("API_KEY не найден в переменных окружения.")
+print(f"Токен доступа: {'api_key'}")
 
-print(f"Токен доступа: {api_key}")
 
-
-def get_currency(currency_code):
+def get_currency(currency_code: str) -> float:
     """Получает курс валют и конвертирует его в рубли"""
+    api_key = os.getenv('API_KEY')
 
     url = f"https://api.apilayer.com/exchangerates_data/latest?symbols=RUB&base={currency_code}"
     headers = {
-        "apikey": "1XqmGMhWlHPfZgIWn9q6DU3bTlflFCt5"  # Мой Api ключ
+        "apikey": api_key
     }
 
     try:
@@ -44,27 +45,25 @@ except Exception as e:
     print(e)
 
 
-def convert_currency(amount, currency_code):
+def convert_currency(amount: float, currency_code: str) -> float:
     """ Конвертируем в рубли"""
     if currency_code in ['USD', 'EUR']:
-        rate = get_currency(currency_code)
-        return amount * rate
+        rates = get_currency(currency_code)
+        return amount * rates
     return amount
 
 
-def get_transaction_amount_in_rub(transaction):
+def get_transaction_amount_in_rub(transaction: dict[str, Any]) -> float:
     """Возвращает сумму транзакции в рублях."""
     operation_amount = transaction.get('operationAmount', {})
     amount = float(operation_amount.get('amount', 0))
-    currency = operation_amount.get('currency', {}).get('code', 'RUB')  # По умолчанию считаем RUB
-    print(f"Транзакция: {transaction}")
+    currency = operation_amount.get('currency', {}).get('code', 'RUB')
     print(f"Сумма: {amount}, Валюта: {currency}")
 
     if amount <= 0:
-        return 0  # Возвращаем 0, если сумма отсутствует или меньше 0
+        return 0
 
     return convert_currency(amount, currency)  # Конвертируем сумму в рубли
-    print(convert_currency)
 
 
 data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
