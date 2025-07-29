@@ -1,8 +1,5 @@
 import json
 import os
-from src.external_api import convert_currency
-
-
 
 def read_file(file_path):
     """Чтение json файла и возвращение списка словарей с данными о транзакциях."""
@@ -18,16 +15,4 @@ def read_file(file_path):
         except json.JSONDecodeError:  # Обрабатываем ошибку, если файл не является корректным JSON
             return []  # Если ошибка, возвращаем пустой список
 
-# Пример использования
-data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
-
-# Теперь data будет содержать список словарей с транзакциями или пустой список
-print(data)  # Выводим данные для проверки
-
-
-
-def get_transaction_amount_in_rub(transaction):
-    """Возвращает сумму транзакции в рублях."""
-    amount = transaction.get('amount', 0)
-    currency = transaction.get('currency', 'RUB')  # По умолчанию считаем, что валюта RUB
-    return convert_currency(amount, currency)  # Конвертируем сумму в рубли
+    print(data)
