@@ -1,7 +1,8 @@
 import json
 import os
+from typing import List, Dict, Any
 
-def read_file(file_path):
+def read_file(file_path: str) -> List[Dict[str, Any]]:
     """Чтение json файла и возвращение списка словарей с данными о транзакциях."""
     if not os.path.exists(file_path):  # Проверяем, существует ли файл
         return []  # Если файл не найден, возвращаем пустой список
@@ -15,4 +16,5 @@ def read_file(file_path):
         except json.JSONDecodeError:  # Обрабатываем ошибку, если файл не является корректным JSON
             return []  # Если ошибка, возвращаем пустой список
 
-    print(data)
+
+
