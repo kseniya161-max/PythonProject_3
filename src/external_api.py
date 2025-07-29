@@ -4,7 +4,7 @@ import requests
 import os
 from dotenv import load_dotenv
 
-# переменные из окружения  .env
+# переменные из окружения .env
 load_dotenv()
 
 # Доступ к переменным окружения
@@ -13,7 +13,6 @@ database_url = os.getenv('DATABASE_URL')
 
 
 print(f"Токен доступа: {api_key}")
-
 
 
 def get_currency(currency_code):
