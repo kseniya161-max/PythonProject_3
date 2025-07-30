@@ -10,20 +10,20 @@ api_key = os.getenv('API_KEY')
 """ Если Api нет в окружении то это вызовет ошибку"""
 if api_key is None:
     raise ValueError("API_KEY не найден в переменных окружения.")
-print(f"Токен доступа: {'api_key'}")
 
 
 def get_currency(currency_code: str) -> float:
     """Получает курс валют и конвертирует его в рубли"""
     api_key = os.getenv('API_KEY')
 
-    url = f"https://api.apilayer.com/exchangerates_data/latest?symbols=RUB&base={currency_code}"
+    url = "https://api.apilayer.com/exchangerates_data/latest"
     headers = {
         "apikey": api_key
     }
+    params = {'symbols': 'RUB', 'base': currency_code}
 
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, params=params)
         response.raise_for_status()
 
         data = response.json()
@@ -37,20 +37,12 @@ def get_currency(currency_code: str) -> float:
         raise Exception(f"Общая ошибка: {e}")
 
 
-currency_code = 'USD'
-try:
-    rate = get_currency(currency_code)
-    print(f"Курс {currency_code} в рублях: {rate}")
-except Exception as e:
-    print(e)
-
-
 def convert_currency(amount: float, currency_code: str) -> float:
     """ Конвертируем в рубли"""
-    if currency_code in ['USD', 'EUR']:
-        rates = get_currency(currency_code)
-        return amount * rates
-    return amount
+    if currency_code == 'RUB':
+        return amount
+    rates = get_currency(currency_code)
+    return amount * rates
 
 
 def get_transaction_amount_in_rub(transaction: dict[str, Any]) -> float:
@@ -64,14 +56,3 @@ def get_transaction_amount_in_rub(transaction: dict[str, Any]) -> float:
         return 0
 
     return convert_currency(amount, currency)  # Конвертируем сумму в рубли
-
-
-data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
-
-for transaction in data:
-    amount_in_rub = get_transaction_amount_in_rub(transaction)
-    print(f"Сумма транзакции в рублях: {amount_in_rub}")
-
-
-
-
