@@ -6,26 +6,36 @@ import logging
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler('src/utils.log', mode='w')
+
+file_handler = logging.FileHandler('logs/application.log', mode='w', encoding='utf-8')
 file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: %(message)s')
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
 def read_file(file_path: str) -> List[Dict[str, Any]]:
-    logging.info("Приложение запущено")
+    logger.info("Приложение запущено")
     """Чтение json файла и возвращение списка словарей с данными о транзакциях."""
-    if not os.path.exists(file_path):  # Проверяем, существует ли файл
-        return []  # Если файл не найден, возвращаем пустой список
+    if not os.path.exists(file_path):
+        return []
 
-    with open(file_path, 'r', encoding='utf-8') as f:  # Указываем кодировку UTF-8
-        logging.info("Чтения файла")
+    with open(file_path, 'r', encoding='utf-8') as f:
+        logger.info("Чтения файла")
         try:
-            data = json.load(f)  # Загружаем данные из файла
-            if not isinstance(data, list):  # Проверяем, является ли data списком
-                logging.error("Некорректный формат")
-                return []  # Если нет, возвращаем пустой список
-            return data  # Возвращаем список словарей
-        except json.JSONDecodeError:  # Обрабатываем ошибку, если файл не является корректным JSON
-            logging.error("Некорректный json файл")
-            return []  # Если ошибка, возвращаем пустой список
+            data = json.load(f)
+            logger.debug("Данные загружены: %s", data)
+            if not isinstance(data, list):
+                logger.error("Некорректный формат")
+                return []
+            return data
+        except json.JSONDecodeError:
+            logger.error("Некорректный json файл")
+            return []
+
+
+
+if __name__ == "__main__":
+    data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
+    print(data)
+
+
