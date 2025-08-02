@@ -20,5 +20,5 @@ if __name__=="__main__":
     transactions = trans_csv_reader("trans_file/transactions.csv")
     print(transactions)
 
-    # transactions_excel = trans_excel_reader("trans_file/transactions_excel.xlsx")
-    # print(transactions_excel)
+    transactions_excel = trans_excel_reader("trans_file/transactions_excel.xlsx")
+    print(transactions_excel)
