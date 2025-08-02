@@ -1,4 +1,4 @@
-from src. transactions import trans_csv_reader,trans_excel_reader
+from src. transactions import trans_csv_reader, trans_excel_reader
 import pytest
 import pandas as pd
 from unittest.mock import patch
@@ -75,7 +75,6 @@ def test_trans_excel_reader():
     with patch('pandas.read_excel', return_value=mock_data) as mock_read_excel:
         result = trans_excel_reader('fake_file.xlsx')  # имя файла не имеет значения
 
-
         mock_read_excel.assert_called_once_with('fake_file.xlsx')
         expected_result = [
             {'id': 650703.0, 'state': 'EXECUTED', 'date': '2023-09-05T11:30:32Z', 'amount': 16210.0,
@@ -102,6 +101,7 @@ def test_trans_excel_reader_file_not_found():
             trans_excel_reader('non_existent_file.xlsx')
         mock_read_excel.assert_called_once_with('non_existent_file.xlsx')
 
+
 def test_trans_excel_reader_empty_file():
     """Тестирует случвй если файл пустой"""
     mock_data = pd.DataFrame(columns=['id', 'state', 'date', 'amount', 'currency_name', 'currency_code', 'from', 'to', 'description'])
@@ -111,9 +111,3 @@ def test_trans_excel_reader_empty_file():
         expected_result = []
         assert result == expected_result
         mock_read_excel.assert_called_once_with('fake_empty_file.xlsx')
-
-
-
-
-
-

@@ -9,7 +9,6 @@ def trans_csv_reader(file_csv: str) -> List[Dict]:
     return df.to_dict(orient='records')
 
 
-
 def trans_excel_reader(file_excel: str) -> List[Dict]:
     """ Функция читает EXCEL файл"""
     excel_df = pd.read_excel(file_excel)
