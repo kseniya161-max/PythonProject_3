@@ -16,9 +16,10 @@ def trans_excel_reader(file_excel: str) -> List[Dict]:
     return excel_df.to_dict(orient='records')
 
 
-if __name__=="__main__":
-    transactions = trans_csv_reader("trans_file/transactions.csv")
-    print(transactions)
-
-    transactions_excel = trans_excel_reader("trans_file/transactions_excel.xlsx")
-    print(transactions_excel)
+# if __name__=="__main__":
+#     transactions = trans_csv_reader("trans_file/transactions.csv")
+#     print(transactions)
+#
+#
+#     transactions_excel = trans_excel_reader("trans_file/transactions_excel.xlsx")
+#     print(transactions_excel)
