@@ -9,6 +9,7 @@ file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: %(me
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
+
 def get_mask_card_number(card_num: str) -> str:
     """Функция возвращает маску номера карты"""
     logger.error("Нет номера карты")

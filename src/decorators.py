@@ -26,8 +26,6 @@ def log(filename=None):
         """Настройка индивидуального обработчика для этой функции"""
         handler = logging.StreamHandler() if filename is None else logging.FileHandler(filename)
         handler.setLevel(logging.INFO)
-
-
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
 

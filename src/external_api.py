@@ -55,8 +55,14 @@ def get_transaction_amount_in_rub(transaction: dict[str, Any]) -> float:
     if amount <= 0:
         return 0
 
+
     return convert_currency(amount, currency)  # Конвертируем сумму в рубли
 
-if __name__ == "__main__":
-    data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
-    print(data)
+# if __name__ == "__main__":
+#     data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
+#
+#
+#     for transaction in data:
+#         amount_in_rub = get_transaction_amount_in_rub(transaction)
+#         print(f"Сумма транзакции в рублях: {amount_in_rub}")
+#     print()
