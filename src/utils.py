@@ -33,9 +33,6 @@ def read_file(file_path: str) -> List[Dict[str, Any]]:
             return []
 
 
-
 if __name__ == "__main__":
     data = read_file("C:/Users/bahar/PycharmProjects/PythonProject3/data/operations.json")
     print(data)
-
-
