@@ -2,10 +2,10 @@ import re
 
 
 def process_bank_search(trans_bank: list[dict], search_bank: str) -> list[dict]:
+    """Функция принимает список словарей и строку поиска и возвращает список словарей у которых есть данная строка"""
     pattern = re.compile(search_bank, re.IGNORECASE)
     filtered_operation = [trans for trans in trans_bank if "description" in trans and pattern.search(trans["description"])]
     return filtered_operation
-
 
 
 
