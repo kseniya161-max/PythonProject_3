@@ -10,6 +10,7 @@ def process_bank_search(trans_bank: list[dict], search_bank: str) -> list[dict]:
 
 
 def process_bank_operations(bank_operation: list[dict], list_operation: list) -> dict:
+    """Функция считает количество банковские операции на основе поля description"""
     description_operation = [operate["description"] for operate in bank_operation if "description" in operate]
     count_descriptions = Counter(description_operation)  # список для хранения описаний операций
     result = {category: count_descriptions.get(category, 0) for category in list_operation}
