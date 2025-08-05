@@ -58,7 +58,7 @@ def status_input(data):
         for operation in filtered_data:
             print(operation)
     else:
-        print(f"Нет операций со статусом \"{status}\".")
+        print(f"Нет операций со статусом \"{status}\". Введите статус, по которому необходимо выполнить фильтрацию. Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING")
 
 
 
