@@ -1,6 +1,8 @@
 import json
 import csv
 import pandas as pd
+import datetime
+from datetime import datetime
 
 
 def main_greating():
@@ -11,27 +13,52 @@ def open_json():
     """ Функция для открытия файла json"""
     with open("../logs/operations.json", "r", encoding="utf-8") as file:
         data = json.load(file)
+        for operation in data:
+            if 'date' in operation:  # Проверяем, есть ли ключ 'date'
+                try:
+                    operation['date'] = datetime.strptime(operation['date'], '%Y-%m-%dT%H:%M:%S.%f')
+                except ValueError:
+                    print(f"Ошибка при разборе даты: {operation['date']}")
+                    operation['date'] = None  # или установите значение по умолчанию
+                else:
+                    print("Запись не содержит ключ 'date':", operation)  # Выводим сообщение для отладки
+                    operation['date'] = None  # или установите значение по умолчанию
+
+
         return data
 
 
 def open_csv():
+    """Функция для открытия файла CSV"""
     with open("trans_file/transactions.csv", "r", encoding="utf-8") as file:
         reader = csv.DictReader(file, delimiter=";")  # Используем DictReader вместо reader
         data_json = list(reader)  # Преобразуем в список словарей
+        for operation in data_json:
+            operation["date"] = datetime.strptime(operation['date'], '%Y-%m-%dT%H:%M:%S.%fZ')
         return data_json
 
 
 def open_excel():
+    """ Функция для открытия файла Excel"""
     data_excel = pd.read_excel("trans_file/transactions_excel.xlsx", engine="openpyxl")
-    return data_excel.to_dict(orient='records')
+    data_records = data_excel.to_dict(orient='records')
+    for operation in data_records:
+        operation['date'] = pd.to_datetime(operation['date']).to_pydatetime()
+    return data_records
 
 
 def filtered_by_status(data, status):
-    """Функция фильтрует по статусу"""
+    """Функция фильтрует по статусу Нр: Executed, Canceled"""
     return [
         operation for operation in data
         if isinstance(operation.get('state'), str) and operation['state'].strip().lower() == status
     ]
+
+def filtered_by_date(data, ascending):
+    """Функция фильтрует операции по дате."""
+    return sorted(data, key=lambda x: x.get('date') or datetime.min, reverse=not ascending)
+
+
 
 def main_user_input():
     users_input = input("Выберите необходимый пункт меню:\n"
@@ -61,6 +88,17 @@ def status_input(data):
         print(f"Нет операций со статусом \"{status}\". Введите статус, по которому необходимо выполнить фильтрацию. Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING")
 
 
+def sort_operation(data):
+    user_input_sort = input ("Отсортировать операции по дате? Да/Нет")
+    if user_input_sort.strip().lower() == "да":
+        user_input_sort_1 = input("Отсортировать по возрастанию или по убыванию? Возрастание/Убывание").strip().lower()
+        ascending = user_input_sort_1 == "возрастание"
+        sorted_data = filtered_by_date(data, ascending)
+        print("Отсортированные операции:")
+        for operation in sorted_data:
+            print(operation)
+
+
 
 
 if __name__ == "__main__":
@@ -70,6 +108,9 @@ if __name__ == "__main__":
     if data is not None:
         print(data)
     status_input(data)
+    sort_operation(data)
+
+
 
 
 
