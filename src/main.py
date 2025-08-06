@@ -101,8 +101,10 @@ def curr_input(data):
     if code.strip().lower() == "да":
         filtered_code = sort_currency(data, "RUB")
         print("Отфильтрованные транзакции:")
+
         for operation in filtered_code:
             print(operation)
+        print(f"Всего банковских операций в выборке: {len(filtered_code)}")
 
         user_input_2 = input("Отфильтровать список транзакций по определенному слову в описании? Да/Нет").strip().lower()
         if user_input_2 == "да":
@@ -112,6 +114,7 @@ def curr_input(data):
             if filtered_word:  # Проверяем, есть ли отфильтрованные операции
                 for operation in filtered_word:
                     print(operation)
+                print(f"Всего банковских операций в выборке: {len(filtered_code)}")
             else:
                 print("Нет операций, соответствующих указанному слову.")
 
