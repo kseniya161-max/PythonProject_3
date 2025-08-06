@@ -23,8 +23,6 @@ def open_json():
         return data
 
 
-
-
 def open_csv():
     with open("trans_file/transactions.csv", "r", encoding="utf-8") as file:
         reader = csv.DictReader(file, delimiter=";")
@@ -143,6 +141,44 @@ def sort_operation(data):
             print(operation)
 
 
+# def format_and_print_operations(data):
+#     """Функция выводит отфильтрованные операции в корректном виде"""
+#     print(f"Всего банковских операций в выборке: {len(data)}\n")
+#     for operation in data:
+#         if isinstance(operation["date"], datetime):
+#             date_str = operation["date"].strftime("%d.%m.%Y")
+#         else:
+#             date_str = "Дата не указана"
+#         description = operation.get('description', 'Описание не указано')
+#         operation_amount = operation.get('operationAmount')
+#         if operation_amount:
+#             amount = operation_amount.get('amount', 'Сумма не указана')
+#             currency = operation_amount.get('currency', {}).get('name', 'Валюта не указана')
+#         else:
+#             amount = 'Сумма не указана'
+#             currency = 'Валюта не указана'
+#
+#         from_account = operation.get('from', 'Счет не указан')
+#         to_account = operation.get('to', 'Счет не указан')
+#
+#         #Сама маскировка
+#         if isinstance(from_account, str):
+#             if "Счет" in from_account:
+#                 from_account = from_account.replace(from_account[6:10], "**")
+#             elif  "Mastercard" in from_account or "Visa" in from_account:
+#                 from_account = from_account[:-4] + "** ****" + from_account[0:7]
+#         if isinstance(to_account, str):
+#             if "Счет" in to_account:
+#                 to_account = to_account.replace(to_account[6:10], '**')
+#             elif 'MasterCard' in to_account or 'Visa' in to_account:
+#                 to_account = to_account[:-4] + '**** **** ' + to_account[0:7]
+#
+#
+#         print(f"{date_str} {description}")
+#         print(f"{from_account} -> {to_account}")
+#         print(f"Сумма: {amount} {currency}\n")
+
+
 def format_and_print_operations(data):
     """Функция выводит отфильтрованные операции в корректном виде"""
     print(f"Всего банковских операций в выборке: {len(data)}\n")
@@ -163,22 +199,24 @@ def format_and_print_operations(data):
         from_account = operation.get('from', 'Счет не указан')
         to_account = operation.get('to', 'Счет не указан')
 
-        #Сама маскировка
-        if isinstance(from_account, str):
-            if "Счет" in from_account:
-                from_account = from_account.replace(from_account[6:10], "**")
-            elif  "Mastercard" in from_account or "Visa" in from_account:
-                from_account = from_account[:-4] + "** ****" + from_account[0:7]
-        if isinstance(to_account, str):
-            if "Счет" in to_account:
-                to_account = to_account.replace(to_account[6:10], '**')
-            elif 'MasterCard' in to_account or 'Visa' in to_account:
-                to_account = to_account[:-4] + '**** **** ' + to_account[0:7]
+        # Маскировка
+        def mask_account(account):
+            if isinstance(account, str):
+                if "Счет" in account:
+                    return f"Счет **{account[-4:]}"  # Оставляем последние 4 цифры
+                elif "MasterCard" in account or "Visa" in account:
+                    # Маскируем номер карты, оставляя последние 4 цифры видимыми
+                    return account[:-4] + "** **** " + account[-4:0]
+            return account
 
+        from_account = mask_account(from_account)
+        to_account = mask_account(to_account)
 
+        # Выводим информацию
         print(f"{date_str} {description}")
         print(f"{from_account} -> {to_account}")
         print(f"Сумма: {amount} {currency}\n")
+
 
 
 if __name__ == "__main__":
