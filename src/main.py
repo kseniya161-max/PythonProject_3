@@ -122,6 +122,7 @@ def curr_input(data):
         if user_input_2 == "да":
             word = input("Введите слово, по которому нужно отфильтровать: ")
             filtered_word = filtered_by_word(filtered_code, word)
+            print("Распечатываю итоговый список транзакций...")
             print("Отфильтрованные операции по слову:")
             if filtered_word:  # Проверяем, есть ли отфильтрованные операции
                 for operation in filtered_word:
