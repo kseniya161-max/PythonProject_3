@@ -20,9 +20,9 @@ def open_json():
                 except ValueError:
                     print(f"Ошибка при разборе даты: {operation['date']}")
                     operation['date'] = None  # или установите значение по умолчанию
-                else:
-                    print("Запись не содержит ключ 'date':", operation)  # Выводим сообщение для отладки
-                    operation['date'] = None  # или установите значение по умолчанию
+            else:
+                print("Запись не содержит ключ 'date':", operation)  # Выводим сообщение для отладки
+                operation['date'] = None  # или установите значение по умолчанию
 
 
         return data
@@ -59,6 +59,14 @@ def filtered_by_date(data, ascending):
     return sorted(data, key=lambda x: x.get('date') or datetime.min, reverse=not ascending)
 
 
+def sort_currency(data, code):
+    """Функция фильтрует по валюте"""
+    return [operation for operation in data if operation.get("operationAmount", {}).get("currency", {}).get("code") == code]
+
+def filtered_by_word(data, word):
+    """Функция фильтрует по ключевому слову"""
+    # return [operation for operation in data if word.lower() in operation.get("description", "").lower()]
+    return [operation for operation in data if word.lower() in operation['description'].lower()]
 
 def main_user_input():
     users_input = input("Выберите необходимый пункт меню:\n"
@@ -88,6 +96,27 @@ def status_input(data):
         print(f"Нет операций со статусом \"{status}\". Введите статус, по которому необходимо выполнить фильтрацию. Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING")
 
 
+def curr_input(data):
+    code = input("Выводить только рублевые транзакции? Да/Нет").strip().lower()
+    if code.strip().lower() == "да":
+        filtered_code = sort_currency(data, "RUB")
+        print("Отфильтрованные транзакции:")
+        for operation in filtered_code:
+            print(operation)
+
+        user_input_2 = input("Отфильтровать список транзакций по определенному слову в описании? Да/Нет").strip().lower()
+        if user_input_2 == "да":
+            word = input("Введите слово, по которому нужно отфильтровать: ")
+            filtered_word = filtered_by_word(filtered_code, word)
+            print("Отфильтрованные операции по слову:")
+            if filtered_word:  # Проверяем, есть ли отфильтрованные операции
+                for operation in filtered_word:
+                    print(operation)
+            else:
+                print("Нет операций, соответствующих указанному слову.")
+
+
+
 def sort_operation(data):
     user_input_sort = input ("Отсортировать операции по дате? Да/Нет")
     if user_input_sort.strip().lower() == "да":
@@ -109,6 +138,7 @@ if __name__ == "__main__":
         print(data)
     status_input(data)
     sort_operation(data)
+    curr_input(data)
 
 
 
