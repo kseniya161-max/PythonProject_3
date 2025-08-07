@@ -203,16 +203,16 @@ def format_and_print_operations(data):
         def mask_account(account):
             if isinstance(account, str):
                 if "Счет" in account:
-                    return f"Счет **{account[-4:]}"  # Оставляем последние 4 цифры
+                    return f"Счет **{account[-4:]}"
                 elif "MasterCard" in account or "Visa" in account:
-                    # Маскируем номер карты, оставляя последние 4 цифры видимыми
+
                     return account[:-4] + "** **** " + account[-4:0]
             return account
 
         from_account = mask_account(from_account)
         to_account = mask_account(to_account)
 
-        # Выводим информацию
+
         print(f"{date_str} {description}")
         print(f"{from_account} -> {to_account}")
         print(f"Сумма: {amount} {currency}\n")

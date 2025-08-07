@@ -41,7 +41,7 @@ def test_open_csv():
     # Патчим open и csv.DictReader
     with patch("builtins.open", mock_open(read_data=mock_csv_data)):
         with patch("csv.DictReader", return_value=csv.DictReader(mock_csv_data.splitlines(), delimiter=';')):
-            result = open_csv()  # Вызываем функцию
+            result = open_csv()
 
     # Проверяем результат
     assert len(result) == 2  # Проверка количества операций
@@ -57,12 +57,10 @@ def test_open_excel():
         'date': ['2023-01-01', None, '2023-01-03'],
         'description': ['Операция 1', 'Операция 2', 'Операция 3']
     })
-
-    # Патчим pd.read_excel, чтобы он возвращал mock_data
     with patch('pandas.read_excel', return_value=mock_data):
-        result = open_excel()  # Вызов функции
+        result = open_excel()
 
-    # Проверяем, что результат соответствует ожидаемому
+
     expected_result = [
         {'date': pd.to_datetime('2023-01-01').to_pydatetime(), 'description': 'Операция 1'},
         {'date': None, 'description': 'Операция 2'},
@@ -73,43 +71,35 @@ def test_open_excel():
 
 
 def test_status_input_valid_status():
-    # Подготовка тестовых данных
     test_data = [
         {'id': 1, 'state': 'executed', 'description': 'Операция 1'},
         {'id': 2, 'state': 'canceled', 'description': 'Операция 2'},
         {'id': 3, 'state': 'pending', 'description': 'Операция 3'},
     ]
 
-    # Патчим input для возврата валидного статуса
     with patch('builtins.input', side_effect=['executed']):
         filtered_data = status_input(test_data)
 
-    # Проверяем, что отфильтрованные данные соответствуют ожидаемым
     assert len(filtered_data) == 1
     assert filtered_data[0]['state'] == 'executed'
 
 
 def test_status_input_invalid_status():
-    # Подготовка тестовых данных
     test_data = [
         {'id': 1, 'state': 'executed', 'description': 'Операция 1'},
         {'id': 2, 'state': 'canceled', 'description': 'Операция 2'},
     ]
 
-    # Патчим input для возврата невалидного статуса, затем валидного
     with patch('builtins.input', side_effect=['invalid_status', 'canceled']):
         with patch('builtins.print') as mock_print:  # Патчим print для проверки вывода
             filtered_data = status_input(test_data)
 
-    # Проверяем, что выводится сообщение об ошибке
     mock_print.assert_any_call('Статус операции "invalid_status" недоступен.')
-    # Проверяем, что данные были отфильтрованы по валидному статусу
     assert len(filtered_data) == 1
     assert filtered_data[0]['state'] == 'canceled'
 
 
 def test_format_and_print_operations():
-    # Подготовка тестовых данных
     test_data = [
         {
             'date': datetime(2023, 1, 1, 12, 0, 0),
@@ -137,14 +127,11 @@ def test_format_and_print_operations():
         "Сумма: 500 USD\n"
     ]
 
-    # Патчим print для проверки вывода
     with patch('builtins.print') as mock_print:
         format_and_print_operations(test_data)
 
-    # Проверяем, что print был вызван с ожидаемыми аргументами
     actual_calls = [call[0][0] for call in mock_print.call_args_list]
 
-    # Убедитесь, что фактический вывод совпадает с ожидаемым
     for expected, actual in zip(expected_output, actual_calls):
         assert expected.strip() == actual.strip()
 
