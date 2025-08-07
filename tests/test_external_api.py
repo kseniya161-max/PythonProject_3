@@ -4,6 +4,7 @@ import requests
 from unittest.mock import patch
 from src.external_api import convert_currency
 
+
 def test_convert_currency():
     """ Конвертирует ли USD  в рубли"""
     with patch('src.external_api.get_currency') as mock_get_currency:
